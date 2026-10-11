@@ -13,6 +13,7 @@
      <TextBlock Text="CSS v34 • TRAINING" FontSize="10" Margin="0,4,0,24" Foreground="{StaticResource MutedBrush}"/>
      <TextBlock Text="НАВИГАЦИЯ" FontSize="10" Foreground="{StaticResource MutedBrush}" Margin="0,0,0,12"/>
      <Button Content="Главная" Click="Home_Click" Padding="12" HorizontalContentAlignment="Left" Background="#203454" Foreground="White" BorderThickness="0" Margin="0,0,0,8"/>
+     <Button Content="Visuals / Tracers" Click="Visuals_Click" Padding="12" HorizontalContentAlignment="Left" Background="#17243B" Foreground="White" BorderThickness="0" Margin="0,0,0,8"/>
      <Button Content="Тренировка" Click="Training_Click" Padding="12" HorizontalContentAlignment="Left" Background="#17243B" Foreground="White" BorderThickness="0" Margin="0,0,0,8"/>
      <Button Content="О программе" Click="About_Click" Padding="12" HorizontalContentAlignment="Left" Background="#17243B" Foreground="White" BorderThickness="0"/>
     </StackPanel>
@@ -29,6 +30,25 @@
       <TextBlock Text="Тренируйся. Улучшайся." FontSize="24" FontWeight="SemiBold" Margin="0,8,0,6"/>
       <TextBlock Text="Лёгкое тренировочное приложение для CSS v34." TextWrapping="Wrap" Foreground="{StaticResource MutedBrush}"/>
       <TextBlock x:Name="StatusText" Text="Статус: приложение запущено" Margin="0,18,0,0"/>
+     </StackPanel>
+    </Border>
+    <Border x:Name="VisualsPanel" Visibility="Collapsed" Background="{StaticResource PanelBrush}" CornerRadius="14" Padding="20" Margin="0,0,0,16">
+     <StackPanel>
+      <TextBlock Text="VISUALS / BULLET TRACERS" FontSize="16" FontWeight="Bold" Foreground="{StaticResource AccentBrush}"/>
+      <TextBlock Text="Настройки ниже — макет интерфейса. Они не меняют игру и не рисуют трассеры в CSS v34." TextWrapping="Wrap" Foreground="{StaticResource MutedBrush}" Margin="0,6,0,16"/>
+      <CheckBox x:Name="TracerToggle" Content="Включить предпросмотр трассера" IsChecked="True" Margin="0,0,0,12" Foreground="{StaticResource TextBrush}"/>
+      <TextBlock Text="Цвет трассера" Margin="0,0,0,6"/>
+      <ComboBox x:Name="TracerColorBox" SelectedIndex="0" Margin="0,0,0,12" Padding="6">
+       <ComboBoxItem Content="Голубой"/><ComboBoxItem Content="Красный"/><ComboBoxItem Content="Зелёный"/>
+      </ComboBox>
+      <TextBlock Text="Толщина" Margin="0,0,0,6"/>
+      <Slider x:Name="TracerWidthSlider" Minimum="1" Maximum="6" Value="2" TickFrequency="1" IsSnapToTickEnabled="True" Margin="0,0,0,12"/>
+      <Border Background="#101A2A" CornerRadius="8" Padding="14">
+       <Canvas Height="44">
+        <Line X1="10" Y1="22" X2="300" Y2="22" Stroke="#27A7FF" StrokeThickness="2"/>
+        <TextBlock Canvas.Left="10" Canvas.Top="28" Text="ПРЕДПРОСМОТР" FontSize="9" Foreground="{StaticResource MutedBrush}"/>
+       </Canvas>
+      </Border>
      </StackPanel>
     </Border>
     <TextBlock Text="ТРЕНИРОВОЧНЫЕ ИНСТРУМЕНТЫ" FontSize="12" FontWeight="Bold" Foreground="{StaticResource MutedBrush}" Margin="0,0,0,12"/>
