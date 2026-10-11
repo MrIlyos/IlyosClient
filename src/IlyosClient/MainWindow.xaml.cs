@@ -28,6 +28,13 @@ public partial class MainWindow : Window
             }
         };
     }
+    private void Visuals_Click(object sender, RoutedEventArgs e)
+    {
+        PageTitle.Text = "Visuals / Tracers";
+        PageDescription.Text = "Макет настроек визуальных эффектов.";
+        VisualsPanel.Visibility = Visibility.Visible;
+        StatusText.Text = "Предпросмотр интерфейса: параметры пока не подключены к игре.";
+    }
     private void Home_Click(object sender, RoutedEventArgs e)
     {
         PageTitle.Text = "Главная";
